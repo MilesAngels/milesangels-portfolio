@@ -21,6 +21,7 @@ body {
         display: flex;
         flex-direction: column;
         width: min(80%, 800px);
+        height: min(100%, 400px);
         margin: 0 auto;
         gap: 2rem;
         .hero-image, .hero-content {
@@ -29,6 +30,14 @@ body {
         .hero-content {
           h1 {
             font-size: 2rem;
+          }
+          .hero-buttons {
+            button {
+              border: none;
+              background-color: $accent-color1;
+              padding: 0.5rem 0.75rem;
+              border-radius: 1rem;
+            }
           }
         }
         
