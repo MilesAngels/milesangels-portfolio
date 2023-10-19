@@ -34,6 +34,8 @@
 body {
   margin: 0;
   display: flex;
+  width: 98%;
+  margin-left: 2%;
   height: 100vh;
   background-color: #230241;
   overflow-y: hidden; /* Hide vertical scrollbar */
@@ -51,8 +53,11 @@ body #section-container #home-section, body #section-container #portfolio-sectio
   background-color: #FFF5FD;
 }
 body #section-container #home-section {
-  -webkit-clip-path: inset(0 0 1rem 0);
-          clip-path: inset(0 0 1rem 0);
+  -webkit-clip-path: inset(1rem 0 1rem 0);
+          clip-path: inset(1rem 0 1rem 0);
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
 }
 body #section-container #home-section .hero {
   display: flex;
@@ -61,9 +66,6 @@ body #section-container #home-section .hero {
   height: min(100%, 400px);
   margin: 0 auto;
   gap: 2rem;
-}
-body #section-container #home-section .hero .hero-image, body #section-container #home-section .hero .hero-content {
-  margin: 3rem 0;
 }
 body #section-container #home-section .hero .hero-content h1 {
   font-size: 2rem;

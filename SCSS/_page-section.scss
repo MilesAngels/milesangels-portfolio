@@ -1,22 +1,31 @@
 body {
   margin: 0;
   display: flex;
+  width: 98%;
+  margin-left: 2%;
   height: 100vh;
   background-color: $secondary-color;
   overflow-y: hidden; /* Hide vertical scrollbar */
+
   #section-container {
     width: 100%;
     overflow-y: auto;
     scroll-behavior: smooth; //Find Cross browser compatibility
+    
     article {
       height: 100vh;
       width: inherit;
     }
+
     #home-section, #portfolio-section, #about-section, #contact-section {
       background-color: $primary-color;
     }
+
     #home-section {
-      clip-path: inset(0 0 1rem 0);
+      clip-path: inset(1rem 0 1rem 0);
+      padding: 2rem 0;
+      display: flex;
+      align-items: center;
       .hero {
         display: flex;
         flex-direction: column;
@@ -24,20 +33,22 @@ body {
         height: min(100%, 400px);
         margin: 0 auto;
         gap: 2rem;
-        .hero-image, .hero-content {
-          margin: 3rem 0;
-        }
+
         .hero-content {
+          
           h1 {
             font-size: 2rem;
           }
+
           .hero-buttons {
+
             button {
               border: none;
               background-color: $accent-color1;
               padding: 0.5rem 0.75rem;
               border-radius: 1rem;
             }
+
           }
         }
         
