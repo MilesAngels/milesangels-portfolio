@@ -11,53 +11,106 @@ body {
     width: 100%;
     overflow-y: auto;
     scroll-behavior: smooth; //Find Cross browser compatibility
-    
+
     article {
       height: 100vh;
       width: inherit;
     }
 
-    #home-section, #portfolio-section, #about-section, #contact-section {
+    #home-section,
+    #portfolio-section,
+    #about-section,
+    #contact-section {
       background-color: $primary-color;
     }
 
     #home-section {
-      clip-path: inset(1rem 0 1rem 0);
+      border-top-left-radius: 1rem;
       padding: 2rem 0;
       display: flex;
-      align-items: center;
+      // align-items: center;
       .hero {
         display: flex;
         flex-direction: column;
         width: min(80%, 800px);
-        height: min(100%, 400px);
+        height: 100%;
+        align-items: center;
         margin: 0 auto;
         gap: 2rem;
 
+        .hero-image {
+          width: min(100%, 350px);
+          border-radius: 50%;
+          border: 0.5rem solid $secondary-color;
+          //margin: 0 auto;
+          background: rgb(35, 2, 65);
+          background: linear-gradient(
+            196deg,
+            rgba(35, 2, 65, 1) 23%,
+            rgba(51, 222, 222, 1) 39%,
+            rgba(172, 242, 10, 1) 45%,
+            rgba(253, 0, 144, 1) 54%,
+            rgba(35, 2, 65, 1) 69%
+          );
+        }
+
         .hero-content {
-          
           h1 {
             font-size: 2rem;
           }
 
           .hero-buttons {
-
             button {
+              display: inline-block;
               border: none;
-              background-color: $accent-color1;
+              position: relative;
+              //background-color: $accent-color1;
               padding: 0.5rem 0.75rem;
               border-radius: 1rem;
+              text-transform: uppercase;
+              font-weight: 600;
+              transition: all 0.3s;
+              overflow: hidden;
+              z-index: 1;
+              &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 1rem;
+                background-color: $accent-color1;
+                z-index: -2;
+              }
+              &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                border-radius: 1rem;
+                transition: all 0.3s;
+                border: 1px solid $accent-color1;
+                background-color: $secondary-color;
+                z-index: -1;
+              }
+              &:hover {
+                color: $primary-color;
+                &:before {
+                  width: 100%;
+                }
+              }
             }
-
           }
         }
-        
       }
     }
   }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
   .hero {
     flex-direction: row !important;
   }

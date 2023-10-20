@@ -1,8 +1,8 @@
+const nav_itemElList = document.querySelectorAll('.nav-item');
+
 // Keep clicked link item in navigation focused
 // even after click and remove the focus if
 // another element is clicked
-const nav_itemElList = document.querySelectorAll('.nav-item');
-
 nav_itemElList.forEach(nav_item => {
     nav_item.addEventListener('click', () => {
         // Check if the previous nav item has the class nav-item-focused 
